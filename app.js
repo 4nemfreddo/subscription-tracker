@@ -2,10 +2,10 @@ import express from 'express'
 
 import { PORT } from "./config/env.js";
 
-import userRouter from './config/routes/user.routes.js';
-import authRouter from './config/routes/auth.routes.js';
-import subscriptionRouter from './config/routes/subscriptions.routes.js';
-import connectToDatabase from './config/database/mongodb.js';
+import userRouter from './routes/user.routes.js';
+import authRouter from './routes/auth.routes.js';
+import subscriptionRouter from './routes/subscriptions.routes.js';
+import connectToDatabase from './database/mongodb.js';
 
 const app = express();
 

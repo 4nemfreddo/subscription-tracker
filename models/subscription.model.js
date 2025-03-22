@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const subscriptionSchema = new mongoose.Schema(definition: {
+const subscriptionSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Subscription name is required'],
@@ -76,6 +76,17 @@ subscriptionSchema.pre(method: 'save', fn:function (next) {
         
         this.RenewalDate = new Date(this.startDate);
         this.RenewalDate.setData(this,this.RenewalDate.getData() + renewalPeriods [ this.frequency]
-
     }
+
+    //Auto-update the server if renewal date has passed
+    if (this.RenewalDate < new Data ()) {
+        this.status = 'expired';
+    }
+
+    next();
 })
+
+const Subscription = mongoose.model(name: 'Subscriptions', subscriptionSchema);
+
+export default Subscription;
+
