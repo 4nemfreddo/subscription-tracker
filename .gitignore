@@ -60,3 +60,6 @@ typings/
 
 # next.js build output
 .next
+
+#git hash: last bug
+54639584672cf2e8d04bde52eb7b8aa02134c63d
