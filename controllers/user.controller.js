@@ -9,7 +9,7 @@ export const getUsers = async ( req, res, next) => {
         next(error);
     }
 }
-//54639584672cf2e8d04bde52eb7b8aa02134c63d
+
 export const getUser = async ( req, res, next) => {
     try {
         const user = await User.findById(req.params.id).select(args: '-password');
