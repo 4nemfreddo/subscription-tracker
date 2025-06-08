@@ -3,6 +3,8 @@ import bcrypt from "bcryptjs";
 import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 
+import { JWT_SECRET, JWT_EXPIRES_IN } from "../config/env.js";
+
 // create new user
 export const signUp = async (req, res, next) => {
     //Signup logic
@@ -14,7 +16,7 @@ export const signUp = async (req, res, next) => {
         const { name, email, password } = req.body;
 
         //check if user already exists
-        const existingUser = await User.findone({ email });
+        const existingUser = await User.findOne({ email });
 
         if(existingUser) {
             const error = new Error('User already exists');
